@@ -1,0 +1,44 @@
+[
+  {
+    "component": "ass2bdnxml",
+    "commit": "ce88fd13134beb5403a3759f72a64b8779112da6",
+    "url": "https://codeload.github.com/cubicibo/ass2bdnxml/tar.gz/ce88fd13134beb5403a3759f72a64b8779112da6",
+    "archive": "ass2bdnxml-ce88fd13134beb5403a3759f72a64b8779112da6.tar.gz",
+    "sha256": "abadc3a8ebc7661e6413e96df3225abefd1c076f365949194c815a83077cf3f0"
+  },
+  {
+    "component": "SUPer",
+    "commit": "07217ac46cd92bb0b6c65c2889806f2fe6e53024",
+    "url": "https://codeload.github.com/cubicibo/SUPer/tar.gz/07217ac46cd92bb0b6c65c2889806f2fe6e53024",
+    "archive": "SUPer-07217ac46cd92bb0b6c65c2889806f2fe6e53024.tar.gz",
+    "sha256": "98c9a4af8a404ce46fa5c348ec648c1e0f0a62ab8c40e31b90b452e2f0b163b3"
+  },
+  {
+    "component": "ScenariStream",
+    "commit": "ed60a11a714728e6e55913b8e9a376ac2fc50288",
+    "url": "https://codeload.github.com/cubicibo/ScenariStream/tar.gz/ed60a11a714728e6e55913b8e9a376ac2fc50288",
+    "archive": "ScenariStream-ed60a11a714728e6e55913b8e9a376ac2fc50288.tar.gz",
+    "sha256": "7bb935a54d3c9f3481622861026fb32c08d7854e5815e03b426ea1165f48a2cf"
+  },
+  {
+    "component": "piliq",
+    "commit": "24c41d1cefc980415ef7aa0be90efa6de3c314c0",
+    "url": "https://codeload.github.com/cubicibo/piliq/tar.gz/24c41d1cefc980415ef7aa0be90efa6de3c314c0",
+    "archive": "piliq-24c41d1cefc980415ef7aa0be90efa6de3c314c0.tar.gz",
+    "sha256": "d629ed311d2152163d2f302cf4ac4367404ac9cd4f96c2b26769320b8d98f9f0"
+  },
+  {
+    "component": "brule",
+    "commit": "2f67b85f8deb614aad6100410b47f3df5a16c42c",
+    "url": "https://codeload.github.com/cubicibo/brule/tar.gz/2f67b85f8deb614aad6100410b47f3df5a16c42c",
+    "archive": "brule-2f67b85f8deb614aad6100410b47f3df5a16c42c.tar.gz",
+    "sha256": "474564ab74a82acc7f3eabba507d241090125335d53f962702e9ada0cc955b37"
+  },
+  {
+    "component": "avs2bdnxml",
+    "version": "2.08",
+    "provenance": "Source supplied with the existing third_party directory; exact static library build still unverified",
+    "archive": "avs2bdnxml-2.08-bundled-src.zip",
+    "sha256": "fbede04848e96c963de344c1a51a8e7d3de52dadd1d52c99b87cf5507004cf90"
+  }
+]

@@ -1,0 +1,3 @@
+# Keep upstream notices byte-for-byte so their SHA256 values survive checkouts.
+legal/licenses/** -text
+legal/upstream-sources/** -text

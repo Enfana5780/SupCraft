@@ -1,0 +1,14 @@
+/app/
+/qa/
+/macos/vendor/
+/macos/dist/
+**/bin/
+**/obj/
+/package-stage-*/
+/ui-reviewed-*.png
+__pycache__/
+*.pyc
+*.log
+subforge-config.lock
+third_party/ass2bdnxml_v07h.7z
+third_party/CLI_win_x64_SUPer_v0.2.8.7z
