@@ -15,7 +15,10 @@ def verify(app):
     assert plist["CFBundleExecutable"] == "SupCraft"
     assert (contents / "Resources/SupCraft.icns").is_file()
     legal = contents / 'Resources/legal'
-    assert (legal / 'licenses/SUPer-GPL-3.0.txt').is_file()
+    assert (legal / 'licenses/GPL-3.0.txt').is_file()
+    assert (legal / 'license-index.json').is_file()
+    assert (legal / 'SupCraft-LICENSE.txt').is_file()
+    assert (legal / 'SupCraft-runtime-0BSD.txt').is_file()
     assert (legal / 'SOURCE-LOCATION.txt').is_file()
     assert not (contents / 'Resources/README.md').exists()
     assert not (contents / 'Resources/THIRD-PARTY-NOTICES.md').exists()

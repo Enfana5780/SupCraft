@@ -6,7 +6,7 @@
 
 - `supercli.py`：优先从 `SUPCRAFT_JOB_CONFIG` 环境变量读取每个任务独立的配置，缺省路径保持上游行为，避免写入只读的应用包。
 - `SUPer/utils.py`：把 `SSIM_PIL.compare_ssim` 的导入改为 `gpu_fallback.compare_ssim`，使 macOS spawn 工作进程同样具有 OpenCL 错误回退。
-- 新增 `macos/runtime/gpu_fallback.py`、`super_entry.py`：默认请求 GPU，设备不存在或 OpenCL 计算失败时记录原因并使用 CPU；与 OpenCL 无关的异常仍报告，不更改编码参数算法。新增独立文件为 SupCraft 自有 0BSD 代码；与 GPL SUPer 组成的编码器按 GPL 条件分发。
+- 新增 `macos/runtime/gpu_fallback.py`、`super_entry.py`：默认请求 GPU，设备不存在或 OpenCL 计算失败时记录原因并使用 CPU；与 OpenCL 无关的异常仍报告，不更改编码参数算法。这些独立适配文件继续保留 SupCraft 自有 0BSD 授权（见 [许可原文](SUPCRAFT-0BSD.txt)），不适用根目录新增的禁止转售条款；与 GPL SUPer 组成的编码器按 GPL 条件分发。
 - 保留上游原始 GPL 文件头及版权声明。原始完整源码归档、生成后的适配文件和可重现替换的构建脚本随授权材料提供。
 
 ## 未改动源码的组件及包装变化

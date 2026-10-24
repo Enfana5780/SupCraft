@@ -9,6 +9,43 @@ using System.Threading;
 using System.Threading.Tasks;
 
 namespace StandaloneAssRocket {
+    // Custom canvases are deliberately confined to the Windows AviSynth path.
+    static class CustomCanvas {
+        public const int Minimum=64,Maximum=4096;
+        public static void ValidateSize(int width,int height){
+            if(width<Minimum||width>Maximum||height<Minimum||height>Maximum)throw new ConversionException("自定义画布","宽高必须为 "+Minimum+"–"+Maximum+" 的整数。","调整自定义宽高。");
+            // The bundled SSE2 loops advance 16 bytes and stop only on equality.
+            // A frame must contain a multiple of four RGBA pixels; the UI's
+            // stricter per-dimension alignment also keeps sizes easy to validate.
+            if(width%4!=0||height%4!=0)throw new ConversionException("自定义画布","宽度和高度必须分别为 4 的倍数。","调整宽高，例如 1440×3200。");
+        }
+        static void Invalid(string details){throw new ConversionException("自定义画布验证","输出尺寸或坐标与所选画布不一致。","保留日志并检查转换核心输出。",details);}
+        static int Number(System.Xml.XmlNode node,string name){int value;var a=node.Attributes[name];if(a==null||!int.TryParse(a.Value,out value)){Invalid("缺少或无效的 "+name);return 0;}return value;}
+        static int Word(byte[] data,int offset){return data[offset]*256+data[offset+1];}
+        static void Rectangle(int x,int y,int w,int h,int width,int height){if(x<0||y<0||w<=0||h<=0||(long)x+w>width||(long)y+h>height)Invalid("越界图形："+x+","+y+" "+w+"×"+h+"；画布 "+width+"×"+height);}
+        public static void ValidateOutput(string path,int width,int height){
+            ValidateSize(width,height);
+            if(path.EndsWith(".xml",StringComparison.OrdinalIgnoreCase)){
+                var d=new System.Xml.XmlDocument();d.Load(path);var format=d.SelectSingleNode("//Format");
+                if(format==null||format.Attributes["VideoFormat"]==null||format.Attributes["VideoFormat"].Value!=width+"x"+height)Invalid("BDN VideoFormat 不匹配。");
+                var graphics=d.SelectNodes("//Graphic");if(graphics.Count==0)Invalid("没有字幕图形。");
+                foreach(System.Xml.XmlNode g in graphics){int w=Number(g,"Width"),h=Number(g,"Height");Rectangle(Number(g,"X"),Number(g,"Y"),w,h,width,height);using(var image=System.Drawing.Image.FromFile(Path.Combine(Path.GetDirectoryName(path),g.InnerText.Trim())))if(image.Width!=w||image.Height!=h)Invalid("PNG 与 XML 图形尺寸不匹配。");}
+            }else{
+                byte[] data=File.ReadAllBytes(path);int offset=0,compositions=0;
+                while(offset<data.Length){
+                    if(data.Length-offset<13||data[offset]!='P'||data[offset+1]!='G')Invalid("SUP 段头损坏。");
+                    int length=Word(data,offset+11),start=offset+13;byte kind=data[offset+10];
+                    if(length>data.Length-start)Invalid("SUP 段不完整。");
+                    if(kind==0x16){if(length<11||Word(data,start)!=width||Word(data,start+2)!=height)Invalid("SUP PCS 画布不匹配。");compositions++;}
+                    if(kind==0x17){if(length<1||length!=1+data[start]*9)Invalid("SUP WDS 不完整。");for(int i=0;i<data[start];i++){int p=start+1+i*9;Rectangle(Word(data,p+1),Word(data,p+3),Word(data,p+5),Word(data,p+7),width,height);}}
+                    if(kind==0x15){if(length<4)Invalid("SUP ODS 不完整。");if((data[start+3]&0x80)!=0){if(length<11)Invalid("SUP ODS 缺少尺寸。");Rectangle(0,0,Word(data,start+7),Word(data,start+9),width,height);}}
+                    offset=start+length;
+                }
+                if(compositions==0)Invalid("SUP 缺少画布信息。");
+            }
+        }
+    }
+
     // Public session fonts are required: FR_PRIVATE fonts cannot reach avs2bdnxml.
     sealed class TemporaryFonts : IDisposable {
         [DllImport("gdi32.dll", CharSet=CharSet.Unicode, ExactSpelling=true)]

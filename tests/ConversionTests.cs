@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -24,9 +24,9 @@ static class ConversionTests {
             using(var form=new MainForm()){
                 typeof(MainForm).GetField("tools",Flags).SetValue(form,executable);
                 form.Show();Application.DoEvents();
-                Field<ComboBox>(form,"engine").SelectedIndex=engine;
-                Field<ComboBox>(form,"resolution").SelectedIndex=0;
-                Field<ComboBox>(form,"format").SelectedIndex=2;
+                Field<UiSelect>(form,"engine").SelectedIndex=engine;
+                Field<UiSelect>(form,"resolution").SelectedIndex=0;
+                Field<UiSelect>(form,"format").SelectedIndex=2;
                 Field<TextBox>(form,"output").Text=Path.Combine(root,"qa",label);
                 if(folder)Field<TextBox>(form,"fontDirectory").Text=Path.Combine(root,"qa","字体目录 测试");
                 typeof(MainForm).GetMethod("AddFiles",Flags).Invoke(form,new object[]{new[]{Path.Combine(root,"qa","fixture.ass")}});
@@ -51,9 +51,9 @@ static class ConversionTests {
         foreach(int resolution in new[]{0,3})using(var form=new MainForm()){
             typeof(MainForm).GetField("tools",Flags).SetValue(form,executable);
             form.Show();Application.DoEvents();
-            Field<ComboBox>(form,"engine").SelectedIndex=1;
-            Field<ComboBox>(form,"resolution").SelectedIndex=resolution;
-            Field<ComboBox>(form,"format").SelectedIndex=1;
+            Field<UiSelect>(form,"engine").SelectedIndex=1;
+            Field<UiSelect>(form,"resolution").SelectedIndex=resolution;
+            Field<UiSelect>(form,"format").SelectedIndex=1;
             string destination=Path.Combine(root,"qa",resolution==0?"modern-bdn-palette":"modern-bdn-2160");
             Field<TextBox>(form,"output").Text=destination;
             Field<TextBox>(form,"fontDirectory").Text=Path.Combine(root,"qa","字体目录 测试");
@@ -77,6 +77,7 @@ static class ConversionTests {
             typeof(MainForm).GetField("tools",Flags).SetValue(form,executable);
             form.Show();Application.DoEvents();
             Field<TextBox>(form,"fontDirectory").Text=Path.Combine(root,"qa","字体目录 测试");
+            Field<UiSelect>(form,"engine").SelectedIndex=0;
             Field<TextBox>(form,"output").Text=Path.Combine(root,"qa","cancel-close");
             typeof(MainForm).GetMethod("AddFiles",Flags).Invoke(form,new object[]{new[]{Path.Combine(root,"qa","fixture.ass")}});
             Task conversion=(Task)typeof(MainForm).GetMethod("ConvertAsync",Flags).Invoke(form,null);

@@ -1,7 +1,10 @@
-﻿$ErrorActionPreference='Stop'
+﻿param([string]$Suffix='')
+$ErrorActionPreference='Stop'
+if($Suffix -and $Suffix -notmatch '^[a-zA-Z0-9-]+$'){throw 'Invalid package suffix'}
 & (Join-Path $PSScriptRoot 'build.ps1')
 $version=(Get-Content -LiteralPath (Join-Path $PSScriptRoot 'VERSION') -Raw).Trim()
 $release="SupCraft-v$version"
+if($Suffix){$release+='-'+$Suffix}
 $parent=Split-Path $PSScriptRoot -Parent
 $stage=Join-Path $PSScriptRoot ('package-stage-'+[guid]::NewGuid().ToString('N'))
 try {
@@ -15,7 +18,7 @@ try {
     Compress-Archive -LiteralPath $payload -DestinationPath (Join-Path $parent "$release.zip") -Force
     $source=Join-Path $stage 'SupCraft-source'
     New-Item -ItemType Directory -Path $source | Out-Null
-    foreach($folder in 'src','third_party','assets','tests','macos','.github','legal'){
+    foreach($folder in 'src','third_party','assets','tests','macos','.github','legal','docs'){
         $base=Join-Path $PSScriptRoot $folder
         Get-ChildItem -LiteralPath $base -File -Recurse -Force | Where-Object {$_.FullName -notmatch '[\\/](\.git|__pycache__|bin|obj)[\\/]' -and $_.FullName -notmatch '[\\/]macos[\\/](vendor|dist)[\\/]'} | ForEach-Object {
             $target=Join-Path $source $_.FullName.Substring($PSScriptRoot.Length+1)

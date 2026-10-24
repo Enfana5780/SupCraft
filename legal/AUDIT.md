@@ -2,7 +2,7 @@
 
 核查日期：2026-10-01。范围：Windows v0.6.1、macOS arm64 v0.7.1
 
-后续处理：版权持有人已明确允许自由使用。SupCraft 自有代码现采用 0BSD，第三方鸣谢、许可原文、固定源码与修改记录见 LICENSING.md、THIRD-PARTY-NOTICES.md 和 legal/；Mac v0.7.2 增加实际运行时材料收集。下文是初次检查记录，未确认的第三方来源仍以 legal/SOURCES.md 为准。
+历史授权：SupCraft 自有代码曾采用 0BSD；2026-10-24 的本地修订改为允许商业项目使用、禁止软件售卖或收费分发的自定义许可，旧版已授予的权利不撤回，`macos/runtime/` 独立适配文件保持 0BSD。当前授权范围和第三方鸣谢见[第三方声明](../THIRD-PARTY-NOTICES.md)，许可、固定源码与修改记录保存在本目录。Mac v0.7.2 增加实际运行时材料收集。下文保留初次检查记录，未确认的第三方来源以 [SOURCES.md](SOURCES.md) 为准；文中的代码路径相对于仓库根目录。
 
 结论：已确认的主要组件允许使用、修改、再分发和商业使用，但需要分别遵守许可证。**当前发布材料存在许可声明及对应源码提供方面的缺口，不能据此认定发行包已全面合规。**免费发布同样需要履行这些义务。此文件记录核查结果，不给 SupCraft 自身代码指定许可证，也不替代对最终发行包的专业法律审查。
 
@@ -73,7 +73,7 @@ GPL 的分发条款见 [GPLv3 第 5、6 节](https://www.gnu.org/licenses/gpl-3.
 
 作为独立作品的 GUI 可以选择自己的许可；GPL 后端、链接 GPL 库的渲染器以及对 GPL 源码的修改仍需满足各自条件。若将 SUPer 算法复制进 C#、把 GPL 库直接集成 GUI，或直接集成 SupMover 的 AGPL 代码，必须重新判断授权范围。
 
-初次检查时仓库根目录没有 SupCraft 自身的 `LICENSE`；后续已按版权持有人的明确授权添加 0BSD，仅覆盖自有代码。公开放在 GitHub 本身不自动授权二次开发和再分发；第三方依赖保持原许可。[GitHub 官方说明](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)。
+初次检查时仓库根目录没有 SupCraft 自身的 `LICENSE`；后续曾按版权持有人的明确授权添加 0BSD，仅覆盖自有代码；当前授权范围见根目录 LICENSE，旧版既有授权仍保留。公开放在 GitHub 本身不自动授权二次开发和再分发；第三方依赖保持原许可。[GitHub 官方说明](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)。
 
 ## 当前发布材料的缺口与补齐顺序
 

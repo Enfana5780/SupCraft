@@ -33,3 +33,13 @@ v0.7.1 原生包的 FFmpeg 配置字符串来自 `cv2/.dylibs/libavcodec.61.19.1
 4. 包元数据和上游主页不是“对应源码已完整提供”的证明。GPL / LGPL 所需的完整材料包括适用的依赖源码、修改、构建/安装脚本；仅提供几份文本不能据此宣称全面合规。
 
 现有材料允许核对已知来源；未确认部分保持明确标记，不作未经验证的合规或商业授权承诺。若对外分发完整第三方运行包，应先完成相关核对。
+
+## 许可正文索引
+
+[第三方组件与授权说明](../THIRD-PARTY-NOTICES.md)列出组件及作者；[license-index.json](license-index.json)保留 44 项原始文件引用，对应 35 份不同正文。`original_file` 是原始组件路径，`file` 是相对于 `licenses/` 的实际正文路径，`sha256` 用于验证原始字节；已有获取地址保存在 `url`。
+
+仅合并逐字节相同的文件，作者声明和许可正文未改写。旧版 NuGet 包与其他组件即使共用一份正文，仍有独立的原始路径记录。刷新工具会先恢复这些路径，再按实际内容重新归并。
+
+[MODIFICATIONS.md](MODIFICATIONS.md)记录第三方修改，[AUDIT.md](AUDIT.md)保留历史核查。开发及校验命令见[构建与维护](../docs/DEVELOPMENT.md)。
+
+项目自有部分的当前许可见根目录 [LICENSE](../LICENSE)；继续适用于 `macos/runtime/` 独立适配文件的 0BSD 原文保存在 [SUPCRAFT-0BSD.txt](SUPCRAFT-0BSD.txt)。第三方许可索引不因项目自有授权变更而改写。

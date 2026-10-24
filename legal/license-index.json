@@ -1,152 +1,252 @@
 [
   {
-    "file": "libass-ISC.txt",
-    "url": "https://raw.githubusercontent.com/libass/libass/master/COPYING",
-    "sha256": "f7e30699d02798351e7f839e3d3bfeb29ce65e44efa7735c225464c4fd7dfe9c"
-  },
-  {
-    "file": "libimagequant-COPYRIGHT.txt",
-    "url": "https://raw.githubusercontent.com/ImageOptim/libimagequant/main/COPYRIGHT",
-    "sha256": "6c131d200c9d383334c764474935faee2707164674be04e3ef7650731cbe7c9b"
-  },
-  {
-    "file": "VSFilterMod-upstream-GPL-3.0.txt",
-    "url": "https://raw.githubusercontent.com/sorayuki/VSFilterMod/master/LICENSE",
-    "sha256": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2"
-  },
-  {
     "file": "Avalonia-MIT.txt",
     "url": "https://raw.githubusercontent.com/AvaloniaUI/Avalonia/master/licence.md",
-    "sha256": "213814d306090074d234d760239ff0f67eb9b8d20eefb4d5631bb39dbe0b769b"
-  },
-  {
-    "file": "PyInstaller-COPYING.txt",
-    "url": "https://raw.githubusercontent.com/pyinstaller/pyinstaller/v6.16.0/COPYING.txt",
-    "sha256": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245"
-  },
-  {
-    "file": "Python-PSF.txt",
-    "url": "https://raw.githubusercontent.com/python/cpython/3.11/LICENSE",
-    "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
-  },
-  {
-    "file": "GLib-COPYING.txt",
-    "url": "https://raw.githubusercontent.com/GNOME/glib/main/LICENSES/LGPL-2.1-or-later.txt",
-    "sha256": "fa6f36630bb1e0c571d34b2bbdf188d08495c9dbf58f28cac112f303fc1f58fb"
-  },
-  {
-    "file": "FriBidi-COPYING.txt",
-    "url": "https://raw.githubusercontent.com/fribidi/fribidi/master/COPYING",
-    "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95"
-  },
-  {
-    "file": "FreeType-FTL.txt",
-    "url": "https://raw.githubusercontent.com/freetype/freetype/master/docs/FTL.TXT",
-    "sha256": "5a5ee54c5001bbad1cdc1a57cc3dd4c42199b2da09d39c7ee41fab002d02967f"
-  },
-  {
-    "file": "HarfBuzz-COPYING.txt",
-    "url": "https://raw.githubusercontent.com/harfbuzz/harfbuzz/main/COPYING",
-    "sha256": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64"
-  },
-  {
-    "file": "Fontconfig-COPYING.txt",
-    "url": "https://raw.githubusercontent.com/fontconfig/fontconfig/main/COPYING",
-    "sha256": "51a51aa9823704fd90bccc616cdd17ebabb5b2b3e9cbde886ca02c7002288067"
-  },
-  {
-    "file": "Graphite2-COPYING.txt",
-    "url": "https://raw.githubusercontent.com/silnrsi/graphite/master/COPYING",
-    "sha256": "2c272829ff23f182c8bf7ea12fedea69b0ae148663123ed5240c117cb129c9c1"
-  },
-  {
-    "file": "PCRE2-LICENCE.txt",
-    "url": "https://raw.githubusercontent.com/PCRE2Project/pcre2/main/LICENCE.md",
-    "sha256": "197d8a73ffee0d6b09adba2f9c677b5f5aede24edf89258a68e48248d010d811"
-  },
-  {
-    "file": "libunibreak-LICENCE.txt",
-    "url": "https://raw.githubusercontent.com/adah1972/libunibreak/master/LICENCE",
-    "sha256": "0c57e2ec42ece17791a75d2f9b2f8e0663181be008667a507f765b3ef22522db"
-  },
-  {
-    "file": "libpng-LICENSE.txt",
-    "url": "https://raw.githubusercontent.com/pnggroup/libpng/libpng16/LICENSE",
-    "sha256": "bdb0a645ea18c60507d0368379b1ac5474b92255fcc2d115e07486a7672ba526"
-  },
-  {
-    "file": "zlib-LICENSE.txt",
-    "url": "https://raw.githubusercontent.com/madler/zlib/master/LICENSE",
-    "sha256": "e32ff4e00d9d94930537635291da39e7e612703334bf6fde8c7f1686fe8a45a2"
+    "sha256": "213814d306090074d234d760239ff0f67eb9b8d20eefb4d5631bb39dbe0b769b",
+    "original_file": "Avalonia-MIT.txt"
   },
   {
     "file": "Brotli-LICENSE.txt",
     "url": "https://raw.githubusercontent.com/google/brotli/master/LICENSE",
-    "sha256": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94"
+    "sha256": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94",
+    "original_file": "Brotli-LICENSE.txt"
   },
   {
     "file": "Expat-COPYING.txt",
     "url": "https://raw.githubusercontent.com/libexpat/libexpat/master/COPYING",
-    "sha256": "73cc92f80889ab23c7287b1a11dd50fdec190c3f26ebe5938c579043817d651e"
+    "sha256": "73cc92f80889ab23c7287b1a11dd50fdec190c3f26ebe5938c579043817d651e",
+    "original_file": "Expat-COPYING.txt"
   },
   {
-    "file": "libiconv-COPYING-LIB.txt",
-    "url": "https://raw.githubusercontent.com/arthenica/libiconv/master/COPYING.LIB",
-    "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95"
-  },
-  {
-    "file": "gettext-COPYING-LIB.txt",
-    "url": "https://raw.githubusercontent.com/autotools-mirror/gettext/master/gettext-runtime/intl/COPYING.LIB",
-    "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95"
-  },
-  {
-    "file": "FFmpeg-COPYING-GPLv3.txt",
+    "file": "avs2bdnxml-GPL-3.0.txt",
     "url": "https://raw.githubusercontent.com/FFmpeg/FFmpeg/n7.1.1/COPYING.GPLv3",
-    "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "original_file": "FFmpeg-COPYING-GPLv3.txt"
   },
   {
     "file": "FFmpeg-COPYING-LGPLv2.1.txt",
     "url": "https://raw.githubusercontent.com/FFmpeg/FFmpeg/n7.1.1/COPYING.LGPLv2.1",
-    "sha256": "b634ab5640e258563c536e658cad87080553df6f34f62269a21d554844e58bfe"
+    "sha256": "b634ab5640e258563c536e658cad87080553df6f34f62269a21d554844e58bfe",
+    "original_file": "FFmpeg-COPYING-LGPLv2.1.txt"
   },
   {
-    "file": "Skia-LICENSE.txt",
-    "url": "https://raw.githubusercontent.com/google/skia/main/LICENSE",
-    "sha256": "5f787c1dee3c56547f09ccc2906ab5f5293c4d8dd6c8654e573216c38e908dbd"
+    "file": "Fontconfig-COPYING.txt",
+    "url": "https://raw.githubusercontent.com/fontconfig/fontconfig/main/COPYING",
+    "sha256": "51a51aa9823704fd90bccc616cdd17ebabb5b2b3e9cbde886ca02c7002288067",
+    "original_file": "Fontconfig-COPYING.txt"
+  },
+  {
+    "file": "FreeType-FTL.txt",
+    "url": "https://raw.githubusercontent.com/freetype/freetype/master/docs/FTL.TXT",
+    "sha256": "5a5ee54c5001bbad1cdc1a57cc3dd4c42199b2da09d39c7ee41fab002d02967f",
+    "original_file": "FreeType-FTL.txt"
+  },
+  {
+    "file": "FriBidi-COPYING.txt",
+    "url": "https://raw.githubusercontent.com/fribidi/fribidi/master/COPYING",
+    "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",
+    "original_file": "FriBidi-COPYING.txt"
+  },
+  {
+    "file": "GLib-COPYING.txt",
+    "url": "https://raw.githubusercontent.com/GNOME/glib/main/LICENSES/LGPL-2.1-or-later.txt",
+    "sha256": "fa6f36630bb1e0c571d34b2bbdf188d08495c9dbf58f28cac112f303fc1f58fb",
+    "original_file": "GLib-COPYING.txt"
+  },
+  {
+    "original_file": "GPL-3.0.txt",
+    "file": "GPL-3.0.txt",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  },
+  {
+    "file": "Graphite2-COPYING.txt",
+    "url": "https://raw.githubusercontent.com/silnrsi/graphite/master/COPYING",
+    "sha256": "2c272829ff23f182c8bf7ea12fedea69b0ae148663123ed5240c117cb129c9c1",
+    "original_file": "Graphite2-COPYING.txt"
+  },
+  {
+    "file": "HarfBuzz-COPYING.txt",
+    "url": "https://raw.githubusercontent.com/harfbuzz/harfbuzz/main/COPYING",
+    "sha256": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64",
+    "original_file": "HarfBuzz-COPYING.txt"
   },
   {
     "file": "Numba-LICENSE.txt",
     "url": "https://raw.githubusercontent.com/numba/numba/0.61.2/LICENSE",
-    "sha256": "3a70e0a21cad03147246f6363d07bf76fae216c72779707f4ae5db06bcacf067"
-  },
-  {
-    "file": "llvmlite-LICENSE.txt",
-    "url": "https://raw.githubusercontent.com/numba/llvmlite/v0.44.0/LICENSE",
-    "sha256": "4b9a7264b0113a7b326ee84fc244b73991b535b4833e4a56d58750f2a72250dc"
-  },
-  {
-    "file": "Pillow-LICENSE.txt",
-    "url": "https://raw.githubusercontent.com/python-pillow/Pillow/11.3.0/LICENSE",
-    "sha256": "17f240ae101143707e5e7303a5d800450d9ccc7475b463cedb555cefdb3c6ece"
+    "sha256": "3a70e0a21cad03147246f6363d07bf76fae216c72779707f4ae5db06bcacf067",
+    "original_file": "Numba-LICENSE.txt"
   },
   {
     "file": "OpenCV-LICENSE.txt",
     "url": "https://raw.githubusercontent.com/opencv/opencv/4.12.0/LICENSE",
-    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "original_file": "OpenCV-LICENSE.txt"
+  },
+  {
+    "file": "PCRE2-LICENCE.txt",
+    "url": "https://raw.githubusercontent.com/PCRE2Project/pcre2/main/LICENCE.md",
+    "sha256": "197d8a73ffee0d6b09adba2f9c677b5f5aede24edf89258a68e48248d010d811",
+    "original_file": "PCRE2-LICENCE.txt"
+  },
+  {
+    "file": "Pillow-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/python-pillow/Pillow/11.3.0/LICENSE",
+    "sha256": "17f240ae101143707e5e7303a5d800450d9ccc7475b463cedb555cefdb3c6ece",
+    "original_file": "Pillow-LICENSE.txt"
+  },
+  {
+    "file": "PyInstaller-COPYING.txt",
+    "url": "https://raw.githubusercontent.com/pyinstaller/pyinstaller/v6.16.0/COPYING.txt",
+    "sha256": "dcf75fdb959db1e3b41c0f8505069d2ece781b5ec6b3d0a4d30975cfc6580245",
+    "original_file": "PyInstaller-COPYING.txt"
+  },
+  {
+    "file": "Python-PSF.txt",
+    "url": "https://raw.githubusercontent.com/python/cpython/3.11/LICENSE",
+    "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+    "original_file": "Python-PSF.txt"
+  },
+  {
+    "original_file": "SUPer-GPL-3.0.txt",
+    "file": "GPL-3.0.txt",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  },
+  {
+    "original_file": "ScenariStream-MIT.txt",
+    "file": "ScenariStream-MIT.txt",
+    "sha256": "6c0f4d0834f09b0fbe148dfebac3c97c7354a52b9049159ea8efc3c6125fc3ef"
+  },
+  {
+    "file": "Skia-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/google/skia/main/LICENSE",
+    "sha256": "5f787c1dee3c56547f09ccc2906ab5f5293c4d8dd6c8654e573216c38e908dbd",
+    "original_file": "Skia-LICENSE.txt"
+  },
+  {
+    "original_file": "SupMover-AGPL-3.0.txt",
+    "file": "SupMover-AGPL-3.0.txt",
+    "sha256": "76a97c878c9c7a8321bb395c2b44d3fe2f8d81314d219b20138ed0e2dddd5182"
+  },
+  {
+    "file": "VSFilterMod-upstream-GPL-3.0.txt",
+    "url": "https://raw.githubusercontent.com/sorayuki/VSFilterMod/master/LICENSE",
+    "sha256": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
+    "original_file": "VSFilterMod-upstream-GPL-3.0.txt"
+  },
+  {
+    "original_file": "ass2bdnxml-ISC.txt",
+    "file": "ass2bdnxml-ISC.txt",
+    "sha256": "dca0de1d1557c72a952a3963f8e5fc960ffa2cc37001e9b584f607ad2402689f"
+  },
+  {
+    "original_file": "avs2bdnxml-GPL-3.0.txt",
+    "file": "avs2bdnxml-GPL-3.0.txt",
+    "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+  },
+  {
+    "original_file": "brule-MIT.txt",
+    "file": "brule-MIT.txt",
+    "sha256": "58c0ef7dc404304eedb976404d7feec0e322cbe7a553dd5f4d4762ec1fbcae8f"
+  },
+  {
+    "file": "FriBidi-COPYING.txt",
+    "url": "https://raw.githubusercontent.com/autotools-mirror/gettext/master/gettext-runtime/intl/COPYING.LIB",
+    "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",
+    "original_file": "gettext-COPYING-LIB.txt"
+  },
+  {
+    "file": "libass-ISC.txt",
+    "url": "https://raw.githubusercontent.com/libass/libass/master/COPYING",
+    "sha256": "f7e30699d02798351e7f839e3d3bfeb29ce65e44efa7735c225464c4fd7dfe9c",
+    "original_file": "libass-ISC.txt"
+  },
+  {
+    "file": "FriBidi-COPYING.txt",
+    "url": "https://raw.githubusercontent.com/arthenica/libiconv/master/COPYING.LIB",
+    "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",
+    "original_file": "libiconv-COPYING-LIB.txt"
+  },
+  {
+    "file": "libimagequant-COPYRIGHT.txt",
+    "url": "https://raw.githubusercontent.com/ImageOptim/libimagequant/main/COPYRIGHT",
+    "sha256": "6c131d200c9d383334c764474935faee2707164674be04e3ef7650731cbe7c9b",
+    "original_file": "libimagequant-COPYRIGHT.txt"
+  },
+  {
+    "file": "libpng-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/pnggroup/libpng/libpng16/LICENSE",
+    "sha256": "bdb0a645ea18c60507d0368379b1ac5474b92255fcc2d115e07486a7672ba526",
+    "original_file": "libpng-LICENSE.txt"
+  },
+  {
+    "file": "libunibreak-LICENCE.txt",
+    "url": "https://raw.githubusercontent.com/adah1972/libunibreak/master/LICENCE",
+    "sha256": "0c57e2ec42ece17791a75d2f9b2f8e0663181be008667a507f765b3ef22522db",
+    "original_file": "libunibreak-LICENCE.txt"
+  },
+  {
+    "file": "llvmlite-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/numba/llvmlite/v0.44.0/LICENSE",
+    "sha256": "4b9a7264b0113a7b326ee84fc244b73991b535b4833e4a56d58750f2a72250dc",
+    "original_file": "llvmlite-LICENSE.txt"
+  },
+  {
+    "original_file": "nuget/harfbuzzsharp.nativeassets.macos/8.3.1.3/LICENSE.txt",
+    "file": "nuget/skiasharp.nativeassets.macos/3.119.4/LICENSE.txt",
+    "sha256": "bc2eb4f37d574f9b1b67da2b17e14d151618850527d78f7323239e7518df5b77"
+  },
+  {
+    "original_file": "nuget/harfbuzzsharp.nativeassets.macos/8.3.1.3/THIRD-PARTY-NOTICES.txt",
+    "file": "nuget/skiasharp.nativeassets.macos/3.119.4/THIRD-PARTY-NOTICES.txt",
+    "sha256": "98acf9d4d6083959988c884f630cdff760f94bfeb9acf57774653e08c23d1e45"
+  },
+  {
+    "original_file": "nuget/skiasharp.nativeassets.macos/3.119.1/LICENSE.txt",
+    "file": "nuget/skiasharp.nativeassets.macos/3.119.4/LICENSE.txt",
+    "sha256": "bc2eb4f37d574f9b1b67da2b17e14d151618850527d78f7323239e7518df5b77"
+  },
+  {
+    "original_file": "nuget/skiasharp.nativeassets.macos/3.119.1/THIRD-PARTY-NOTICES.txt",
+    "file": "nuget/skiasharp.nativeassets.macos/3.119.4/THIRD-PARTY-NOTICES.txt",
+    "sha256": "98acf9d4d6083959988c884f630cdff760f94bfeb9acf57774653e08c23d1e45"
+  },
+  {
+    "original_file": "nuget/skiasharp.nativeassets.macos/3.119.4/LICENSE.txt",
+    "file": "nuget/skiasharp.nativeassets.macos/3.119.4/LICENSE.txt",
+    "sha256": "bc2eb4f37d574f9b1b67da2b17e14d151618850527d78f7323239e7518df5b77"
+  },
+  {
+    "original_file": "nuget/skiasharp.nativeassets.macos/3.119.4/THIRD-PARTY-NOTICES.txt",
+    "file": "nuget/skiasharp.nativeassets.macos/3.119.4/THIRD-PARTY-NOTICES.txt",
+    "sha256": "98acf9d4d6083959988c884f630cdff760f94bfeb9acf57774653e08c23d1e45"
   },
   {
     "file": "opencv-python-LICENSE.txt",
     "url": "https://raw.githubusercontent.com/opencv/opencv-python/4.x/LICENSE.txt",
-    "sha256": "09d719058e782ac7bc71ba21c944e1136cde2bb957c0e888121f0218d6b5f02c"
+    "sha256": "09d719058e782ac7bc71ba21c944e1136cde2bb957c0e888121f0218d6b5f02c",
+    "original_file": "opencv-python-LICENSE.txt"
   },
   {
     "file": "opencv-python-THIRD-PARTY.txt",
     "url": "https://raw.githubusercontent.com/opencv/opencv-python/4.x/LICENSE-3RD-PARTY.txt",
-    "sha256": "36bae33968d5e67f66906bc595949cb78d65978604e7392f552a79006c93cf2c"
+    "sha256": "36bae33968d5e67f66906bc595949cb78d65978604e7392f552a79006c93cf2c",
+    "original_file": "opencv-python-THIRD-PARTY.txt"
+  },
+  {
+    "original_file": "piliq-MIT.txt",
+    "file": "ScenariStream-MIT.txt",
+    "sha256": "6c0f4d0834f09b0fbe148dfebac3c97c7354a52b9049159ea8efc3c6125fc3ef"
   },
   {
     "file": "tqdm-LICENCE.txt",
     "url": "https://raw.githubusercontent.com/tqdm/tqdm/v4.67.1/LICENCE",
-    "sha256": "dc33252e829015e3b150086fb9b3a40f6ad6fb32c2f4610ce812fa677d35986a"
+    "sha256": "dc33252e829015e3b150086fb9b3a40f6ad6fb32c2f4610ce812fa677d35986a",
+    "original_file": "tqdm-LICENCE.txt"
+  },
+  {
+    "file": "zlib-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/madler/zlib/master/LICENSE",
+    "sha256": "e32ff4e00d9d94930537635291da39e7e612703334bf6fde8c7f1686fe8a45a2",
+    "original_file": "zlib-LICENSE.txt"
   }
 ]

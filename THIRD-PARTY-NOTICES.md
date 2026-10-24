@@ -1,6 +1,12 @@
-# 第三方组件与鸣谢
+# 第三方组件与授权说明
 
-感谢以下项目的作者、贡献者与维护者，使 SupCraft 的字幕渲染、PGS 编码和桌面界面成为可能。以下组件保留原作者版权与许可证，不属于 SupCraft 自有代码的 0BSD 授权范围。
+SupCraft 未另行标注许可的独立自有部分采用[免费使用与禁止转售许可](LICENSE)，覆盖自有界面、转换协调代码、构建脚本、测试、文档和应用图标。允许用于商业项目、修改和免费分发；未经另行书面授权，禁止售卖或收费分发软件及修改版。
+
+第三方代码、运行库、NuGet / Python 包和上游修改文件保留各自许可证，不能给这些组件追加禁止商用或禁止售卖的限制。SUPer 修改版 `supercli.py`、`SUPer/utils.py` 及相应编码器组合继续按 GPLv3-or-later 条件处理。
+
+`macos/runtime/` 中的独立适配文件保持 [0BSD](legal/SUPCRAFT-0BSD.txt)，以保留与 GPL 后端组合所需的授权边界。之前已按 0BSD 授予的权利不被本次修订收回。用户字幕、商业字体及输出素材不由本项目代为授权。
+
+感谢以下项目的作者、贡献者与维护者。组件、原文及来源对应如下：
 
 | 组件 / 作者或维护者 | 用途 | 许可与材料 |
 | --- | --- | --- |
@@ -8,7 +14,7 @@
 | [VSFilterMod](https://github.com/sorayuki/VSFilterMod)，MPC-HC Team 与 VSFilterMod 贡献者 | Windows 兼容模式 ASS 渲染 | 上游 GPLv3；[许可参考](legal/licenses/VSFilterMod-upstream-GPL-3.0.txt)。当前 DLL 2.5.2.2 的准确构建来源待确认，详见源码说明 |
 | [ass2bdnxml](https://github.com/cubicibo/ass2bdnxml)，Martin Herkt（mia-0）与 cubicibo | libass 路线 BDN / PNG 输出 | [ISC 版权与许可](legal/licenses/ass2bdnxml-ISC.txt)；链接 libimagequant 的构建同时满足 GPL 要求 |
 | [libass](https://github.com/libass/libass)，libass contributors | ASS 字幕渲染 | [ISC](legal/licenses/libass-ISC.txt) |
-| [SUPer](https://github.com/cubicibo/SUPer)，cibo / cubicibo | PGS 编码和效果优化 | [GPLv3-or-later](legal/licenses/SUPer-GPL-3.0.txt)，包含配置读取与 OpenCL 回退适配，修改说明见 legal/MODIFICATIONS.md |
+| [SUPer](https://github.com/cubicibo/SUPer)，cibo / cubicibo | PGS 编码和效果优化 | [GPLv3-or-later](legal/licenses/GPL-3.0.txt)，包含配置读取与 OpenCL 回退适配，修改说明见 legal/MODIFICATIONS.md |
 | [libimagequant](https://pngquant.org/lib/)，Kornel Lesiński 与贡献者 | 图像量化 | [GPLv3 / 历史版权声明](legal/licenses/libimagequant-COPYRIGHT.txt)，上游另提供商业许可 |
 | [ScenariStream](https://github.com/cubicibo/ScenariStream)、[piliq](https://github.com/cubicibo/piliq)、[brule](https://github.com/cubicibo/brule) | 编码辅助、量化接口与 RLE | 各项目 MIT；完整原始文本位于 legal/licenses/ |
 | [Avalonia Community](https://github.com/AvaloniaUI/Avalonia)，AvaloniaUI 贡献者 | Mac 桌面界面 | [MIT](legal/licenses/Avalonia-MIT.txt)；未使用 XPF 等商业组件 |

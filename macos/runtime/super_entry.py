@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: 0BSD
+# See ../../legal/SUPCRAFT-0BSD.txt.
 """Frozen macOS SUPer entry point. No GPU preference is exposed to the user."""
 import multiprocessing
 import os

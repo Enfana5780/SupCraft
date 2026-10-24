@@ -1,6 +1,6 @@
 """Collect the actual build's notices, package records and upstream source.
 
-SPDX-License-Identifier: 0BSD
+SPDX-License-Identifier: LicenseRef-SupCraft-Free-Use-No-Resale-1.0
 This inventory records unresolved native provenance; it does not certify it.
 """
 from datetime import datetime, timezone
@@ -24,6 +24,9 @@ def notice(path):
 def collect(resources, python, native_paths):
     legal = resources / 'legal'
     shutil.copytree(PROJECT / 'legal/licenses', legal / 'licenses', dirs_exist_ok=True)
+    shutil.copy2(PROJECT / 'legal/license-index.json', legal / 'license-index.json')
+    shutil.copy2(PROJECT / 'LICENSE', legal / 'SupCraft-LICENSE.txt')
+    shutil.copy2(PROJECT / 'legal/SUPCRAFT-0BSD.txt', legal / 'SupCraft-runtime-0BSD.txt')
     pins = json.loads((PROJECT / 'macos/upstream-pins.json').read_text(encoding='utf8'))
     sources = json.loads((PROJECT / 'legal/source-index.json').read_text(encoding='utf8'))
     (legal / 'source-index.json').write_text(json.dumps([entry for entry in sources if entry['component'] in pins], indent=2) + '\n', encoding='utf8')

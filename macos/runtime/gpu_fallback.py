@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: 0BSD
+# See ../../legal/SUPCRAFT-0BSD.txt.
 """Request GPU by default, with a logged CPU fallback for OpenCL errors only."""
 import importlib
 import sys

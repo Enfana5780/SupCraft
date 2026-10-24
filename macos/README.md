@@ -54,7 +54,7 @@ SUPer 的适配只增加按任务读取配置的入口及 OpenCL 错误回退；
 
 ## 授权与鸣谢材料
 
-SupCraft 自有代码采用 0BSD，可免费或商业使用、修改和分发，无需额外申请。第三方组件仍使用各自许可证，感谢 libass、ass2bdnxml、SUPer、Avalonia、SkiaSharp 及所有依赖的作者和维护者。
+SupCraft 独立自有部分采用[免费使用与禁止转售许可](../LICENSE)，允许用于商业项目，禁止售卖或收费分发软件及修改版。`runtime/` 独立适配文件继续采用 [0BSD](../legal/SUPCRAFT-0BSD.txt)，GPL 后端及第三方组件保留原许可。此前已授予的旧版许可不被撤回。感谢 libass、ass2bdnxml、SUPer、Avalonia、SkiaSharp 及所有依赖的作者和维护者。
 
 下载包只包含 `SupCraft.app`（DMG 另有“应用程序”安装入口）。README、鸣谢、授权说明、审计与源码归档在 GitHub 查阅，不另附说明文件或 legal ZIP。第三方组件必须保留的许可文本及实际依赖记录保存在应用内部 `Contents/Resources/legal/`，源码位置见其中 `SOURCE-LOCATION.txt`。
 

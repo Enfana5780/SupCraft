@@ -1,14 +1,61 @@
-Zero-Clause BSD
+SupCraft 免费使用与禁止转售许可 1.0
+SupCraft Free Use and No Resale License 1.0
+SPDX-License-Identifier: LicenseRef-SupCraft-Free-Use-No-Resale-1.0
 
 Copyright (C) 2026 Enfana5780
+本次授权修订日期：2026-10-24
 
-Permission to use, copy, modify, and/or distribute this software for
-any purpose with or without fee is hereby granted.
+1. 适用范围
 
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL
-WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
-OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE
-FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
-DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
-AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
-OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+本许可仅适用于本版本中由 Enfana5780 有权授权、且未另行标注许可证的
+SupCraft 独立自有代码、构建脚本、测试、文档和应用图标（下称“本软件”）。
+第三方代码、运行库、上游修改文件以及第 5 条列出的例外不受本许可覆盖。
+
+2. 免费使用与修改
+
+在遵守本许可的前提下，你可以免费使用、复制、研究和修改本软件，也可以
+不收费地分发本软件的源码、可执行文件及修改版。
+
+允许在企业内部、收费字幕制作及其他商业项目中使用本软件。可以对你提供的
+独立劳务、服务或成果收费；这些行为本身不属于售卖本软件。自愿捐赠也被允许，
+但不得将捐赠作为获得软件副本或使用资格的强制条件。
+
+3. 禁止售卖与收费分发
+
+未经版权持有人另行书面许可，不得售卖、转售或收费分发本软件或其修改版。
+不得通过强制付费会员、付费下载、付费激活或捆绑收费软件包等方式，向接收者
+收取获取或使用所分发软件副本所必需的费用。更名、重新打包或修改软件，
+不能规避本条限制；不得以劳务、服务或捐赠名义变相收费分发软件副本。
+
+4. 再分发时的说明
+
+免费再分发本软件或其修改版时，必须随附本许可及适用的版权声明，并保留
+第三方组件要求的声明和许可文本。修改版应明确标注已经修改，不能冒充原版。
+本许可不要求单独公开本软件的自有源码；第三方许可证的源码提供要求另行适用。
+
+5. 第三方与独立适配代码例外
+
+第三方组件及其修改版继续适用各自许可证，包括 GPL、LGPL、MIT、ISC 等。
+本许可不得解释为给这些独立组件增加禁止商业使用、售卖或分发的限制。
+
+macos/runtime/ 中的独立适配文件继续采用 0BSD；其许可原文保存在
+legal/SUPCRAFT-0BSD.txt（运行包中的 SupCraft-runtime-0BSD.txt）。
+基于上游 GPL 文件形成的修改版及相应编码器组合
+仍按相应 GPL 条件分发。组件及授权边界详见 THIRD-PARTY-NOTICES.md。
+
+6. 已有授权与输出内容
+
+本次修订不撤回或缩减此前已有效授予的 0BSD 或其他许可证权利；已经依据
+旧许可证取得的软件、代码及相应授权，不会仅因本文件变化而自动受新增限制。
+
+用户输入的字幕、字体以及使用本软件生成的输出，不因使用本软件而适用本许可。
+这些内容的权利仍取决于各自的权利人及适用授权。
+
+7. 免责
+
+本软件按“现状”提供，在法律允许的范围内不提供任何明示或暗示的担保。
+在法律允许的范围内，版权持有人不对因使用或无法使用本软件所产生的损害承担责任。
+法律不得排除的权利和责任不受本条影响。
+
+本许可是自定义的免费使用许可，不是 0BSD、MIT、GPL 或经 OSI 批准的开源许可证。
+超出本许可范围的授权须另行取得版权持有人的书面许可。

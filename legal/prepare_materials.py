@@ -1,6 +1,6 @@
 """Refresh retained upstream licenses and immutable source archives.
 
-SPDX-License-Identifier: 0BSD
+SPDX-License-Identifier: LicenseRef-SupCraft-Free-Use-No-Resale-1.0
 Existing files are reused; --refresh deliberately re-fetches reference notices.
 """
 import argparse
@@ -12,6 +12,7 @@ import shutil
 import tarfile
 import urllib.request
 import zipfile
+from notice_catalog import compact_notices, restore_notices
 
 ROOT = Path(__file__).resolve().parent.parent
 LEGAL = ROOT / "legal"
@@ -60,6 +61,9 @@ def download(url, target):
 
 def prepare(refresh=False):
     licenses = LEGAL / "licenses"; licenses.mkdir(parents=True, exist_ok=True)
+    catalog_path = LEGAL / 'license-index.json'
+    previous = json.loads(catalog_path.read_text(encoding='utf8')) if catalog_path.exists() else []
+    restore_notices(licenses, previous)
     source_dir = LEGAL / "upstream-sources"; source_dir.mkdir(exist_ok=True)
     pins = json.loads((ROOT / "macos/upstream-pins.json").read_text())
     index = []
@@ -111,11 +115,13 @@ def prepare(refresh=False):
     with ThreadPoolExecutor(max_workers=8) as pool:
         references = list(pool.map(fetch, REFERENCES.items()))
     (LEGAL / 'source-index.json').write_text(json.dumps(index, indent=2) + '\n', encoding='utf8')
-    (LEGAL / 'license-index.json').write_text(json.dumps(references, indent=2) + '\n', encoding='utf8')
     failures = [item for item in references if 'error' in item]
     for item in failures: print('MISSING:', item['file'], item['error'])
     print(f"Prepared {len(pins)} complete pinned upstream archives, bundled avs2bdnxml source and {len(references) - len(failures)} reference notices.")
     if failures: raise SystemExit(1)
+    catalog = compact_notices(licenses, previous + references)
+    catalog_path.write_text(json.dumps(catalog, indent=2) + '\n', encoding='utf8')
+    print(f"Catalogued {len(catalog)} component notices in {len({entry['file'] for entry in catalog})} distinct files.")
 
 
 if __name__ == '__main__':
