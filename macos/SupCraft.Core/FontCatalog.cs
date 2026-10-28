@@ -8,6 +8,8 @@ public sealed class FontCatalog
 {
     static FontCatalog() => Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
     private readonly Dictionary<string, string> files = new(StringComparer.OrdinalIgnoreCase);
+    private readonly SortedSet<string> displayNames = new(StringComparer.OrdinalIgnoreCase);
+    public IReadOnlyCollection<string> FamilyNames => displayNames.Where(name => !name.StartsWith('.')).ToArray();
     private readonly HashSet<string> families = new(StringComparer.OrdinalIgnoreCase);
     public static string Normalize(string name) => Regex.Replace(name.Trim().TrimStart('@'), @"\s+", "").ToLowerInvariant();
     public bool Available(string name) => families.Contains(Normalize(name)) || files.ContainsKey(Normalize(name));
@@ -80,7 +82,7 @@ public sealed class FontCatalog
                     if (position + length > stream.Length) continue;
                     stream.Position = position; byte[] bytes = reader.ReadBytes(length);
                     string alias = (platform is 0 or 3 ? Encoding.BigEndianUnicode : Encoding.GetEncoding(10000)).GetString(bytes).Trim('\0', ' ');
-                    if (alias.Length > 0) files[Normalize(alias)] = path;
+                    if (alias.Length > 0) { files[Normalize(alias)] = path; if (id is 1 or 16) displayNames.Add(alias); }
                 }
             }
         }
@@ -112,7 +114,10 @@ public sealed class FontCatalog
                 IntPtr value = CFArrayGetValueAtIndex(array, i);
                 int size = checked((int)CFStringGetLength(value) * 4 + 1); byte[] buffer = new byte[size];
                 if (CFStringGetCString(value, buffer, size, 0x08000100))
-                    families.Add(Normalize(Encoding.UTF8.GetString(buffer, 0, Array.IndexOf(buffer, (byte)0))));
+                    {
+                    string name = Encoding.UTF8.GetString(buffer, 0, Array.IndexOf(buffer, (byte)0));
+                    families.Add(Normalize(name)); displayNames.Add(name);
+                }
             }
         }
         finally { CFRelease(array); }

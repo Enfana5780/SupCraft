@@ -25,10 +25,8 @@ public sealed class AssDocument
     {
         if (!File.Exists(path) || !path.EndsWith(".ass", StringComparison.OrdinalIgnoreCase))
             throw new ConversionException("输入", "请选择存在的 ASS 字幕文件。", path);
-        var bytes = File.ReadAllBytes(path);
-        string text;
-        try { text = new UTF8Encoding(false, true).GetString(bytes); }
-        catch (DecoderFallbackException) { text = Encoding.GetEncoding(936).GetString(bytes); }
+        var fontDocument = AssFontDocument.Read(path);
+        string text = fontDocument.Text;
         var doc = new AssDocument(text.TrimStart('\ufeff').Replace("\r\n", "\n").Split('\n'));
         string section = "";
         string[]? eventFormat = null, styleFormat = null;
@@ -66,6 +64,8 @@ public sealed class AssDocument
             }
         }
         if (doc.EventCount == 0) throw new ConversionException("字幕预检", "字幕没有可转换的非空 Dialogue 事件。");
+        doc.Fonts.Clear();
+        doc.Fonts.UnionWith(fontDocument.References.Select(r => r.Name));
         return doc;
     }
 

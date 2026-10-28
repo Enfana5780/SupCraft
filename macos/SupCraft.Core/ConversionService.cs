@@ -8,7 +8,7 @@ using SkiaSharp;
 namespace SupCraft.Core;
 
 public enum OutputFormat { Sup, Bdn, Both }
-public sealed record ConversionOptions(string OutputDirectory, string? FontDirectory, int Height = 1080, double FrameRate = 23.976, OutputFormat Format = OutputFormat.Sup, string Language = "zho", bool Hdr = false, decimal DimPercent = 33, bool PalettePng = true);
+public sealed record ConversionOptions(string OutputDirectory, string? FontDirectory, int Height = 1080, double FrameRate = 23.976, OutputFormat Format = OutputFormat.Sup, string Language = "zho", bool Hdr = false, decimal DimPercent = 33, bool PalettePng = true, bool UseGpu = false);
 public sealed record Toolchain(string Renderer, string Encoder, string Quantizer)
 {
     public static Toolchain Load(string path)
@@ -32,10 +32,13 @@ public sealed class ConversionService(Toolchain tools, IToolRunner? runner = nul
     public static string UniqueName(string input, string directory, HashSet<string> used)
     {
         string stem = SafeName(Path.GetFileNameWithoutExtension(input)), name = stem;
-        for (int i = 2; used.Contains(name) || File.Exists(Path.Combine(directory, name + ".sup")) || File.Exists(Path.Combine(directory, name + ".xml")); i++) name = stem + "_" + i;
-        used.Add(name); return name;
+        for (int i = 2; used.Contains(Path.GetFullPath(Path.Combine(directory, name))) || File.Exists(Path.Combine(directory, name + ".sup")) || File.Exists(Path.Combine(directory, name + ".xml")); i++) name = stem + "_" + i;
+        used.Add(Path.GetFullPath(Path.Combine(directory, name))); return name;
     }
-    public static string Config(string quantizer) => $"[PILIQ]\nquality=95\nspeed=4\ndither=95\nquantizer={quantizer}\n\n[SUPer]\nuse_gpu=1\nlayout_mode=2\nabort_on_error=0\n";
+    public static string ResolveOutputDirectory(string input, string? directory) =>
+        string.IsNullOrWhiteSpace(directory) ? Path.GetDirectoryName(Path.GetFullPath(input))! : Path.GetFullPath(directory.Trim());
+
+    public static string Config(string quantizer, bool useGpu = false) => $"[PILIQ]\nquality=95\nspeed=4\ndither=95\nquantizer={quantizer}\n\n[SUPer]\nuse_gpu={(useGpu ? 1 : 0)}\nlayout_mode=2\nabort_on_error=0\n";
 
     public async Task<IReadOnlyList<string>> ConvertAsync(string input, ConversionOptions options, HashSet<string> used, Action<string> log, CancellationToken token)
     {
@@ -52,6 +55,7 @@ public sealed class ConversionService(Toolchain tools, IToolRunner? runner = nul
         var missing = document.Fonts.Where(f => !catalog.Available(f)).ToArray();
         if (missing.Length > 0) log("[警告] 缺失字体：" + string.Join("、", missing) + "；替代字体可能改变排版。");
         if (document.SkippedLines.Count > 0) log($"跳过 {document.SkippedLines.Count} 条空字幕；原始行号：{string.Join('、', document.SkippedLines.Take(20))}。原 ASS 不变。");
+        options = options with { OutputDirectory = ResolveOutputDirectory(input, options.OutputDirectory) };
         Directory.CreateDirectory(options.OutputDirectory);
         string name = UniqueName(input, options.OutputDirectory, used);
         string work = Path.Combine(Path.GetTempPath(), "SupCraft", Guid.NewGuid().ToString("N"));
@@ -86,9 +90,9 @@ public sealed class ConversionService(Toolchain tools, IToolRunner? runner = nul
             if (options.Format != OutputFormat.Bdn)
             {
                 string config = Path.Combine(work, "super.ini"), sup = Path.Combine(work, name + ".sup");
-                File.WriteAllText(config, Config(tools.Quantizer));
+                File.WriteAllText(config, Config(tools.Quantizer, options.UseGpu));
                 var env = new Dictionary<string, string> { ["SUPCRAFT_JOB_CONFIG"] = config, ["PYTHONUNBUFFERED"] = "1" };
-                log("SUPer：默认请求 OpenCL 加速；设备不可用时由编码器回退 CPU。");
+                log(options.UseGpu ? "SUPer：请求 OpenCL 加速；设备不可用时由编码器回退 CPU。" : "SUPer：使用 CPU 编码。");
                 await runner.RunAsync(tools.Encoder, ["-i", xml, "-b", options.Hdr ? "2020" : "709", "-q", "3", "-t", "4", "-y", sup], work, env, log, token);
                 ValidateSup(sup, document.LastEnd);
                 token.ThrowIfCancellationRequested();

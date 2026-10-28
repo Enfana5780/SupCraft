@@ -60,4 +60,4 @@ python legal/check_materials.py
 
 ## Mac
 
-Mac 使用 .NET / Avalonia，仅构建 macOS 15+ Apple Silicon。GPU 默认请求启用，OpenCL 失败记录原因后回退 CPU；目录字体不注册到系统。实际包的 Python / NuGet 许可及原生构建记录由 `macos/collect_legal.py` 收集后放入应用内部，再签名；说明与上游归档集中在源码仓库，不另发 legal ZIP。原生构建命令见 [Mac 说明](../macos/README.md)。
+Mac 使用 .NET / Avalonia，仅构建 macOS 15+ Apple Silicon。GPU 默认关闭，可在 SUP 输出时显式开启；OpenCL 失败记录原因后回退 CPU；目录字体不注册到系统。实际包的 Python / NuGet 许可及原生构建记录由 `macos/collect_legal.py` 收集后放入应用内部，再签名；说明与上游归档集中在源码仓库，不另发 legal ZIP。原生构建命令见 [Mac 说明](../macos/README.md)。
